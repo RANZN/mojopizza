@@ -23,8 +23,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         bnv=findViewById(R.id.bottom_navigation);
-
-
         getSupportFragmentManager().beginTransaction().replace(R.id.frame,new Home_Fragment()).commit();
         bnv.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -48,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                         fragment=new AccountFragment();
                         break;
                 }
-                getSupportFragmentManager().beginTransaction().add(R.id.frame,fragment).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.frame,fragment).commit();
                 return true;
             }
         });
