@@ -35,10 +35,10 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.home:
                         fragment=new Home_Fragment();
                         break;
-                    case R.id.search:
+                    case R.id.cart:
                         fragment=new CartFragment();
                         break;
-                    case R.id.add:
+                    case R.id.search:
                         fragment=new ClubFragment();
                         break;
                     case R.id.profile:
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                         fragment=new AccountFragment();
                         break;
                 }
-                getSupportFragmentManager().beginTransaction().add(R.id.frame,fragment).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.frame,fragment).commit();
                 return true;
             }
         });

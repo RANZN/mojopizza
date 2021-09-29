@@ -42,6 +42,8 @@ public class Home_Fragment extends Fragment {
         imageList.add(new SlideModel(R.drawable.pizza1, ScaleTypes.FIT));
         initviews(view);
         imageSlider.setImageList(imageList);
+        buildStudentList();
+        setRecyclerView();
 
     }
     private void buildStudentList() {

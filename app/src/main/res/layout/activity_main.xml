@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#131313"
+    android:background="#ffffff"
     tools:context=".MainActivity">
 
     <FrameLayout
@@ -14,14 +14,18 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/bottom_navigation"></FrameLayout>
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/bottom_navigation"
-        android:background="#131313"
-
         android:layout_alignParentBottom="true"
-        android:elevation="5dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
+        android:background="?android:attr/windowBackground"
+        android:fitsSystemWindows="true"
+        app:itemIconTint="@drawable/color_tab"
+        app:itemTextColor="@drawable/color_tab"
+        app:labelVisibilityMode="labeled"
+        app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior"
         app:menu="@menu/menu_bottom"
-        app:itemIconTint="#808080"
         />
 </RelativeLayout>
