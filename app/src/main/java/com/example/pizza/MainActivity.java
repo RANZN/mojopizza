@@ -39,10 +39,10 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.search:
                         fragment=new ClubFragment();
                         break;
-                    case R.id.profile:
+                    case R.id.message:
                         fragment=new FreeFragment();
                         break;
-                    case R.id.message:
+                    case R.id.profile:
                         fragment=new AccountFragment();
                         break;
                 }
