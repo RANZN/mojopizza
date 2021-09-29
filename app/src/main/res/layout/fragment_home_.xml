@@ -1,25 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragments.Home_Fragment">
+
     <EditText
+        android:id="@+id/search1"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:id="@+id/search1"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ScrollView
+        android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:layout_below="@+id/search1"
-        >
+        app:layout_constraintTop_toBottomOf="@id/search1">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
             <com.denzcoskun.imageslider.ImageSlider
                 android:layout_below="@+id/linearTool"
                 android:id="@+id/image_slider"
@@ -36,49 +39,38 @@
                 android:layout_height="match_parent"
                 android:text="Category"
                 />
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_below="@+id/image_slider"
-                android:id="@+id/recycler1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Hello World!" >
 
-            </androidx.recyclerview.widget.RecyclerView>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/a"
+                android:layout_margin="10sp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/b"
+                android:layout_margin="10sp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/c"
+                android:layout_margin="10sp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Category"
-                />
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:src="@drawable/pizza1"
-                android:layout_margin="10sp">
+                android:text="Category" />
 
-            </ImageView>
-            <ImageView
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler1"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:src="@drawable/pizza1"
-                android:layout_margin="10sp">
-
-            </ImageView>
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:src="@drawable/pizza1"
-                android:layout_margin="10sp">
-
-            </ImageView>
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:src="@drawable/pizza1"
-                android:layout_margin="10sp">
-
-            </ImageView>
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/image_slider"
+                android:text="Hello World!" />
         </LinearLayout>
     </ScrollView>
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
