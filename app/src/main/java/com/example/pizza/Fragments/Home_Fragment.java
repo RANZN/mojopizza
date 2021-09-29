@@ -42,34 +42,21 @@ public class Home_Fragment extends Fragment {
         imageList.add(new SlideModel(R.drawable.pizza1, ScaleTypes.FIT));
         initviews(view);
         imageSlider.setImageList(imageList);
-        buildStudentList();
+        buildList();
         setRecyclerView();
 
     }
-    private void buildStudentList() {
-        for (int i=0;i<20;i++)
-        {
-            if(i%4==0)
-            {
-                Image_model model=new Image_model(R.drawable.pizza1);
-                imageButtons.add(model);
-            }
-            else if(i%4==1)
-            {
-                Image_model model=new Image_model(R.drawable.pizza1);
-                imageButtons.add(model);
-            }
-            else if(i%4==2)
-            {
-                Image_model model=new Image_model(R.drawable.pizza1);
-                imageButtons.add(model);
-            }
-            else if(i%4==3)
-            {
-                Image_model model=new Image_model(R.drawable.pizza1);
-                imageButtons.add(model);
-            }
-        }
+    private void buildList() {
+        imageButtons.add(new Image_model(R.drawable.d));
+        imageButtons.add(new Image_model(R.drawable.e));
+        imageButtons.add(new Image_model(R.drawable.f));
+        imageButtons.add(new Image_model(R.drawable.g));
+        imageButtons.add(new Image_model(R.drawable.h));
+        imageButtons.add(new Image_model(R.drawable.i));
+        imageButtons.add(new Image_model(R.drawable.j));
+        imageButtons.add(new Image_model(R.drawable.k));
+        imageButtons.add(new Image_model(R.drawable.l));
+        imageButtons.add(new Image_model(R.drawable.m));
     }
 
     private void setRecyclerView() {
