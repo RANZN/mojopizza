@@ -9,6 +9,9 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:id="@+id/search1"
+        android:background="@drawable/shape1"
+        android:padding="3dp"
+        android:layout_margin="10dp"
         />
     <ScrollView
         android:layout_width="match_parent"
@@ -16,28 +19,28 @@
         android:layout_below="@+id/search1"
         >
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
             <com.denzcoskun.imageslider.ImageSlider
-                android:layout_below="@+id/linearTool"
                 android:id="@+id/image_slider"
                 android:layout_width="wrap_content"
                 android:layout_height="200dp"
-                app:iss_auto_cycle="false"
+                app:iss_auto_cycle="true"
                 app:iss_period="1000"
                 app:iss_delay="0"
                 android:layout_margin="10sp"
                 />
             <TextView
+                android:layout_below="@+id/image_slider"
                 android:id="@+id/tvCategory"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Category"
                 />
             <androidx.recyclerview.widget.RecyclerView
-                android:layout_below="@+id/image_slider"
+                android:layout_below="@+id/tvCategory"
                 android:id="@+id/recycler1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -45,40 +48,7 @@
 
             </androidx.recyclerview.widget.RecyclerView>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Category"
-                />
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:src="@drawable/pizza1"
-                android:layout_margin="10sp">
-
-            </ImageView>
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:src="@drawable/pizza1"
-                android:layout_margin="10sp">
-
-            </ImageView>
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:src="@drawable/pizza1"
-                android:layout_margin="10sp">
-
-            </ImageView>
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:src="@drawable/pizza1"
-                android:layout_margin="10sp">
-
-            </ImageView>
-        </LinearLayout>
+        </RelativeLayout>
     </ScrollView>
 
 </RelativeLayout>
