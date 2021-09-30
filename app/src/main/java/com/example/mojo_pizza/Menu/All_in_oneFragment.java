@@ -1,6 +1,7 @@
 package com.example.mojo_pizza.Menu;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -17,15 +18,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.mojo_pizza.Activities.Item_Detail_Activity;
 import com.example.mojo_pizza.Adapter.All_Model;
 import com.example.mojo_pizza.Adapter.MenuAdapter;
+import com.example.mojo_pizza.Helper.PreferenceHelper;
 import com.example.mojo_pizza.R;
 import com.example.mojo_pizza.communication.CommunicationListener;
+import com.example.mojo_pizza.communication.ItemClickListener;
 
 import java.util.ArrayList;
 
 
-public class All_in_oneFragment extends Fragment {
+public class All_in_oneFragment extends Fragment implements ItemClickListener {
     private ImageView btnBack;
     private ImageView TvFavorite;
     private TextView mTvPredict;
@@ -125,7 +129,7 @@ public class All_in_oneFragment extends Fragment {
 
 
     private void setRecyclerviewAdapter() {
-        MenuAdapter menuAdapter = new MenuAdapter(all_modelsList);
+        MenuAdapter menuAdapter = new MenuAdapter(all_modelsList , this);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(menuAdapter);
@@ -171,5 +175,16 @@ public class All_in_oneFragment extends Fragment {
         mTvGarlicBread = view.findViewById(R.id.GarlicBread);
         mTvDesserts = view.findViewById(R.id.Desserts);
         recyclerView = view.findViewById(R.id.all_menu_recyclerView);
+    }
+
+    @Override
+    public void onItemClick(int position, All_Model all_model) {
+        PreferenceHelper.writeIntToPreference(getContext(), "ImagePoster",all_model.getPosterImage());
+        PreferenceHelper.writeStringToPreference(getContext(),"ItemName",all_model.getNameOfItem());
+        PreferenceHelper.writeStringToPreference(getContext(),"ItemDetail",all_model.getDetailOfItem_1());
+        PreferenceHelper.writeStringToPreference(getContext(),"ItemDetail_1",all_model.getDetailOfItem());
+        PreferenceHelper.writeStringToPreference(getContext(),"Prize",all_model.getPrize());
+
+        listener.launchDetailItemFragment();
     }
 }

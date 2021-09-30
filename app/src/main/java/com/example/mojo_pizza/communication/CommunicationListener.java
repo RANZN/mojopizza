@@ -7,4 +7,5 @@ public interface CommunicationListener {
     void launchHalfAndHalfFragment();
     void launchPartyComboFragment();
     void launchStartersFragment();
+    void launchDetailItemFragment();
 }

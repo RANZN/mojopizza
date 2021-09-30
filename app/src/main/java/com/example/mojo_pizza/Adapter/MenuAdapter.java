@@ -4,26 +4,30 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mojo_pizza.R;
+import com.example.mojo_pizza.communication.ItemClickListener;
 
 import java.util.ArrayList;
 
 public class MenuAdapter extends RecyclerView.Adapter<MenuViewHolder> {
     private ArrayList<All_Model> all_modelsList;
-    public MenuAdapter(ArrayList<All_Model> all_modelsList){
+    private ItemClickListener itemClickListener;
+    public MenuAdapter(ArrayList<All_Model> all_modelsList , ItemClickListener itemClickListener){
         this.all_modelsList = all_modelsList;
+        this.itemClickListener = itemClickListener;
     }
 
     @NonNull
     @Override
     public MenuViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_layout,parent,false);
-        return new MenuViewHolder(view);
+        return new MenuViewHolder(view, itemClickListener);
     }
 
     @Override
@@ -44,9 +48,12 @@ class MenuViewHolder extends RecyclerView.ViewHolder{
     private TextView TvDetail_1;
     private ImageView TvPosterImage;
     private TextView TvPrize;
+    private ItemClickListener itemClickListener;
+    private RelativeLayout relativeLayout;
 
-    public MenuViewHolder(@NonNull View itemView) {
+    public MenuViewHolder(@NonNull View itemView, ItemClickListener itemClickListener) {
         super(itemView);
+        this.itemClickListener = itemClickListener;
         initView(itemView);
     }
 
@@ -57,6 +64,7 @@ class MenuViewHolder extends RecyclerView.ViewHolder{
         TvDetail_1 = itemView.findViewById(R.id.aboutItem_2);
         TvPosterImage = itemView.findViewById(R.id.imageifitem);
         TvPrize = itemView.findViewById(R.id.prize);
+        relativeLayout = itemView.findViewById(R.id.item_RelativeLayout);
     }
     public void setData(All_Model all_model){
         TvName.setText(all_model.getNameOfItem());
@@ -65,5 +73,11 @@ class MenuViewHolder extends RecyclerView.ViewHolder{
         TvDetail_1.setText(all_model.getDetailOfItem_1());
         TvPosterImage.setImageResource(all_model.getPosterImage());
         TvPrize.setText(all_model.getPrize());
+        relativeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                itemClickListener.onItemClick(getAdapterPosition(),all_model);
+            }
+        });
     }
 }

@@ -4,10 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Abhishek/AndroidStudioProjects/Mojo_Pizza2/app/src/main/res/drawable/favorite.xml" value="0.2703125" />
+        <entry key="..\:/Users/Abhishek/AndroidStudioProjects/Mojo_Pizza2/app/src/main/res/layout/activity_item.xml" value="0.23007246376811594" />
+        <entry key="..\:/Users/Abhishek/AndroidStudioProjects/Mojo_Pizza2/app/src/main/res/layout/activity_item_detail.xml" value="0.23007246376811594" />
         <entry key="..\:/Users/Abhishek/AndroidStudioProjects/Mojo_Pizza2/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Abhishek/AndroidStudioProjects/Mojo_Pizza2/app/src/main/res/layout/fragment_all_in_one.xml" value="0.264" />
+        <entry key="..\:/Users/Abhishek/AndroidStudioProjects/Mojo_Pizza2/app/src/main/res/layout/fragment_all_in_one.xml" value="0.152" />
         <entry key="..\:/Users/Abhishek/AndroidStudioProjects/Mojo_Pizza2/app/src/main/res/layout/fragment_big10.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Abhishek/AndroidStudioProjects/Mojo_Pizza2/app/src/main/res/layout/fragment_desserts_and_drinks.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Abhishek/AndroidStudioProjects/Mojo_Pizza2/app/src/main/res/layout/fragment_detil__item.xml" value="0.23007246376811594" />
         <entry key="..\:/Users/Abhishek/AndroidStudioProjects/Mojo_Pizza2/app/src/main/res/layout/fragment_garlic_breads.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Abhishek/AndroidStudioProjects/Mojo_Pizza2/app/src/main/res/layout/fragment_half_and_half.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Abhishek/AndroidStudioProjects/Mojo_Pizza2/app/src/main/res/layout/fragment_party_combo.xml" value="0.25416666666666665" />

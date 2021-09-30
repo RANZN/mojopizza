@@ -1,4 +1,4 @@
-package com.example.mojo_pizza;
+package com.example.mojo_pizza.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -12,10 +12,12 @@ import android.widget.Button;
 import com.example.mojo_pizza.Menu.All_in_oneFragment;
 import com.example.mojo_pizza.Menu.Big10Fragment;
 import com.example.mojo_pizza.Menu.DessertsAndDrinksFragment;
+import com.example.mojo_pizza.Menu.Detil_ItemFragment;
 import com.example.mojo_pizza.Menu.GarlicBreadsFragment;
 import com.example.mojo_pizza.Menu.HalfAndHalfFragment;
 import com.example.mojo_pizza.Menu.PartyComboFragment;
 import com.example.mojo_pizza.Menu.StatersFragment;
+import com.example.mojo_pizza.R;
 import com.example.mojo_pizza.communication.CommunicationListener;
 
 public class MainActivity extends AppCompatActivity implements CommunicationListener {
@@ -70,5 +72,12 @@ public class MainActivity extends AppCompatActivity implements CommunicationList
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         StatersFragment starters = new StatersFragment();
         fragmentTransaction.replace(R.id.contaner,starters ,"Starters").addToBackStack("").commit();
+    }
+
+    @Override
+    public void launchDetailItemFragment() {
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        Detil_ItemFragment detail  = new Detil_ItemFragment();
+        fragmentTransaction.add(R.id.contaner,detail,"Detail").addToBackStack("").commit();
     }
 }
